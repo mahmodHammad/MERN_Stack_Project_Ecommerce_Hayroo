@@ -23,6 +23,8 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const bodyParser = require('body-parser');
+
 
 // Import Router
 const authRouter = require("./routes/auth");
@@ -32,6 +34,7 @@ const brainTreeRouter = require("./routes/braintree");
 const orderRouter = require("./routes/orders");
 const usersRouter = require("./routes/users");
 const customizeRouter = require("./routes/customize");
+const promoRouter = require("./routes/promo");
 // Import Auth middleware for check user login or not~
 const { loginCheck } = require("./middleware/auth");
 const CreateAllFolder = require("./config/uploadFolderCreateScript");
@@ -61,6 +64,12 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+// configure the app to use bodyParser()
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
 // Routes
 app.use("/api", authRouter);
 app.use("/api/user", usersRouter);
@@ -69,6 +78,7 @@ app.use("/api/product", productRouter);
 app.use("/api", brainTreeRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
+app.use("/api/promo", promoRouter);
 
 // Run Server
 const PORT = process.env.PORT || 8000;
