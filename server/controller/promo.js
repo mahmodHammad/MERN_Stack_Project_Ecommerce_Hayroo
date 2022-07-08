@@ -5,7 +5,7 @@ class Promo {
   
   async checkPromo(req, res) {
     let promo=req.body;
-    let code= await promoModel.find({});
+    let code= await promoModel.find({code:promo.code});
     let today = new Date();
     let expire = new Date(code[0].expire);
 
