@@ -35,6 +35,9 @@ const productSchema = new mongoose.Schema(
       type: String,
       default: null,
     },
+    pFeatures:[{
+      feature: String
+    }],
     pRatingsReviews: [
       {
         review: String,

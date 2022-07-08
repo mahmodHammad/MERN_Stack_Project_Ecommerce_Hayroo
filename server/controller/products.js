@@ -42,7 +42,7 @@ class Product {
   }
 
   async postAddProduct(req, res) {
-    let { pName, pDescription, pPrice, pQuantity, pCategory, pOffer, pStatus } =
+    let { pName, pDescription, pPrice, pQuantity, pCategory, pOffer, pFeatures, pStatus } =
       req.body;
     let images = req.files;
     // Validation
@@ -83,6 +83,7 @@ class Product {
           pQuantity,
           pCategory,
           pOffer,
+          pFeatures,
           pStatus,
         });
         let save = await newProduct.save();
@@ -105,6 +106,7 @@ class Product {
       pCategory,
       pOffer,
       pStatus,
+      pFeatures,
       pImages,
     } = req.body;
     let editImages = req.files;
@@ -140,6 +142,7 @@ class Product {
         pQuantity,
         pCategory,
         pOffer,
+        pFeatures,
         pStatus,
       };
       if (editImages.length == 2) {
