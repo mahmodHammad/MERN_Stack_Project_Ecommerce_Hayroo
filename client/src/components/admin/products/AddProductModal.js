@@ -192,6 +192,26 @@ const AddProductDetail = ({ categories }) => {
                 rows={2}
               />
             </div>
+            <div className="flex flex-col space-y-2">
+              <label htmlFor="features" >Product tags*</label>
+              <textarea placeholder="[tag1,tag2...]"
+              //edit here
+                // value={fData.pDescription}
+                // onChange={(e) =>
+                //   setFdata({
+                //     ...fData,
+                //     error: false,
+                //     success: false,
+                //     pDescription: e.target.value,
+                //   })
+                // }
+                className="px-4 py-2 border focus:outline-none"
+                name="features"
+                id="features"
+                cols={5}
+                rows={2}
+              />
+            </div>
             {/* Most Important part for uploading multiple image */}
             <div className="flex flex-col mt-4">
               <label htmlFor="image">Product Images *</label>
