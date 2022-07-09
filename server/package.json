@@ -16,6 +16,9 @@
   "bugs": {
     "url": "https://github.com/hasan-py/MERN_Stack_Project_Hayroo_Ecommerce/issues"
   },
+  "engines": {
+    "node": "16.16.0"
+  },
   "homepage": "https://github.com/hasan-py/MERN_Stack_Project_Hayroo_Ecommerce#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
