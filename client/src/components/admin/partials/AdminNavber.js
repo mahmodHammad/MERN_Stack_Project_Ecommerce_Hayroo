@@ -39,8 +39,7 @@ const AdminNavber = (props) => {
             onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.70rem" }}
             className="flex items-left text-center font-bold uppercase text-white-800 text-2xl cursor-pointer px-2 text-center"
-          >
-            stop & shop
+          >stop&shop
           </span>
         </div>
         {/* Small Screen Show */}
