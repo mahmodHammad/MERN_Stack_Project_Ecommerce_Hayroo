@@ -5,7 +5,7 @@ const AdminFooter = (props) => {
   return (
     <Fragment>
       <footer
-        style={{ background: "#303031", color: "#87898A" }}
+        style={{ background: "white", color: "#04aa6d" }}
         className="z-10 py-6 px-4 md:px-12 text-center"
       >
         Develop & Design ASU team

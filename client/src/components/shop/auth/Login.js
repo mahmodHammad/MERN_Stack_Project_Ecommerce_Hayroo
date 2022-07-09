@@ -105,7 +105,7 @@ const Login = (props) => {
         </div>
         <div
           onClick={(e) => formSubmit()}
-          style={{ background: "#303031" }}
+          style={{ background: "#04aa6d" }}
           className="font-medium px-4 py-2 text-white text-center cursor-pointer"
         >
           Login

@@ -94,7 +94,7 @@ const CategoryTable = ({ order, editOrder }) => {
   return (
     <Fragment>
       <tr className="border-b">
-        <td className="w-48 hover:bg-gray-200 p-2 flex flex-col space-y-1">
+        <td className="w-48 hover:bg-grey-500 p-2 flex flex-col space-y-1">
           {order.allProduct.map((product, i) => {
             return (
               <span className="block flex items-center space-x-2" key={i}>
@@ -109,7 +109,7 @@ const CategoryTable = ({ order, editOrder }) => {
             );
           })}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center cursor-default">
+        <td className="hover:bg-grey-500 p-2 text-center cursor-default">
           {order.status === "Not processed" && (
             <span className="block text-red-600 rounded-full text-center text-xs px-2 font-semibold">
               {order.status}
@@ -136,28 +136,28 @@ const CategoryTable = ({ order, editOrder }) => {
             </span>
           )}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-grey-500 p-2 text-center">
           ${order.amount}.00
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-grey-500 p-2 text-center">
           {order.transactionId}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">{order.user.name}</td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-grey-500 p-2 text-center">{order.user.name}</td>
+        <td className="hover:bg-grey-500 p-2 text-center">
           {order.user.email}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">{order.phone}</td>
-        <td className="hover:bg-gray-200 p-2 text-center">{order.address}</td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-grey-500 p-2 text-center">{order.phone}</td>
+        <td className="hover:bg-grey-500 p-2 text-center">{order.address}</td>
+        <td className="hover:bg-grey-500 p-2 text-center">
           {moment(order.createdAt).format("lll")}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-grey-500 p-2 text-center">
           {moment(order.updatedAt).format("lll")}
         </td>
         <td className="p-2 flex items-center justify-center">
           <span
             onClick={(e) => editOrder(order._id, true, order.status)}
-            className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
+            className="cursor-pointer hover:bg-grey-500 rounded-lg p-2 mx-1"
           >
             <svg
               className="w-6 h-6 fill-current text-green-500"
@@ -175,7 +175,7 @@ const CategoryTable = ({ order, editOrder }) => {
           </span>
           <span
             onClick={(e) => deleteOrderReq(order._id, dispatch)}
-            className="cursor-pointer hover:bg-gray-200 rounded-lg p-2 mx-1"
+            className="cursor-pointer hover:bg-grey-500 rounded-lg p-2 mx-1"
           >
             <svg
               className="w-6 h-6 text-red-500"

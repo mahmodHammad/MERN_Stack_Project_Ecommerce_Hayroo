@@ -28,7 +28,7 @@ const TableBody = ({ order }) => {
   return (
     <Fragment>
       <tr className="border-b">
-        <td className="w-48 hover:bg-gray-200 p-2 flex flex-col space-y-1">
+        <td className="w-48 hover:bg-grey-500 p-2 flex flex-col space-y-1">
           {order.allProduct.map((product, i) => {
             return (
               <span className="block flex items-center space-x-2" key={i}>
@@ -43,7 +43,7 @@ const TableBody = ({ order }) => {
             );
           })}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center cursor-default">
+        <td className="hover:bg-grey-500 p-2 text-center cursor-default">
           {order.status === "Not processed" && (
             <span className="block text-red-600 rounded-full text-center text-xs px-2 font-semibold">
               {order.status}
@@ -70,18 +70,18 @@ const TableBody = ({ order }) => {
             </span>
           )}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-grey-500 p-2 text-center">
           ${order.amount}.00
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">{order.phone}</td>
-        <td className="hover:bg-gray-200 p-2 text-center">{order.address}</td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-grey-500 p-2 text-center">{order.phone}</td>
+        <td className="hover:bg-grey-500 p-2 text-center">{order.address}</td>
+        <td className="hover:bg-grey-500 p-2 text-center">
           {order.transactionId}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-grey-500 p-2 text-center">
           {moment(order.createdAt).format("lll")}
         </td>
-        <td className="hover:bg-gray-200 p-2 text-center">
+        <td className="hover:bg-grey-500 p-2 text-center">
           {moment(order.updatedAt).format("lll")}
         </td>
       </tr>
@@ -122,7 +122,7 @@ const OrdersComponent = () => {
     <Fragment>
       <div className="flex flex-col w-full my-4 md:my-0 md:w-9/12 md:px-8">
         <div className="border">
-          <div className="py-4 px-4 text-lg font-semibold border-t-2 border-yellow-700">
+          <div className="py-4 px-4 text-lg font-semibold border-t-2 border-green-700">
             Orders
           </div>
           <hr />

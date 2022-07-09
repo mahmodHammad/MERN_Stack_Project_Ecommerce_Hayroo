@@ -13,12 +13,12 @@ const AdminNavber = (props) => {
 
   return (
     <Fragment>
-      <nav className="sticky z-10 flex items-center shadow-md justify-between px-4 py-4 md:px-8 top-0 w-full bg-white">
+      <nav className="sticky z-10 flex items-center shadow-md justify-between px-4 py-4 md:px-8 top-0 w-full bg-white"style={{background: "rgb(40, 42, 53)", color: "white"}}>
         {/*  Large Screen Show  */}
         <div className="hidden lg:block lg:flex lg:items-center lg:space-x-4 mr-32">
           <span>
             <svg
-              className="w-8 h-8 cursor-pointer text-gray-600"
+              className="w-8 h-8 cursor-pointer text-white-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -38,7 +38,7 @@ const AdminNavber = (props) => {
           <span
             onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.70rem" }}
-            className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
+            className="flex items-left text-center font-bold uppercase text-white-800 text-2xl cursor-pointer px-2 text-center"
           >
             stop & shop
           </span>
@@ -47,7 +47,7 @@ const AdminNavber = (props) => {
         <div className="lg:hidden flex items-center">
           <svg
             id="hamburgerBtn"
-            className="lg:hidden w-8 h-8 cursor-pointer text-gray-600"
+            className="lg:hidden w-8 h-8 cursor-pointer text-white-600"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -63,16 +63,16 @@ const AdminNavber = (props) => {
           <span
             onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.10rem" }}
-            className="flex items-left text-center font-bold uppercase text-gray-800 text-2xl cursor-pointer px-2 text-center"
+            className="flex items-left text-center font-bold uppercase text-white-800 text-2xl cursor-pointer px-2 text-center"
           >
             stop & shop
           </span>
         </div>
         {/* Both Screen show */}
         <div className="flex items-center">
-          {/* <div className="hover:bg-gray-200 rounded-lg p-2" title="Search">
+          {/* <div className="hover:bg-green-500 rounded-lg p-2" title="Search">
             <svg
-              className="cursor-pointer w-8 h-8 text-gray-600 hover:text-gray-800"
+              className="cursor-pointer w-8 h-8 text-white-600 hover:text-white-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -86,9 +86,9 @@ const AdminNavber = (props) => {
               />
             </svg>
           </div> */}
-          {/* <div className="hover:bg-gray-200 rounded-lg p-2" title="Search">
+          {/* <div className="hover:bg-green-500 rounded-lg p-2" title="Search">
             <svg
-              className="cursor-pointer w-8 h-8 text-gray-600 hover:text-gray-800"
+              className="cursor-pointer w-8 h-8 text-white-600 hover:text-white-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -104,11 +104,11 @@ const AdminNavber = (props) => {
           </div> */}
           {/* Logout Button Dropdown */}
           <div
-            className="userDropdownBtn hover:bg-gray-200 px-2 py-2 rounded-lg relative"
+            className="userDropdownBtn hover:bg-green-500 px-2 py-2 rounded-lg relative"
             title="Logout"
           >
             <svg
-              className="cursor-pointer w-8 h-8 text-gray-600 hover:text-gray-800"
+              className="cursor-pointer w-8 h-8 text-white-600 hover:text-white-800"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

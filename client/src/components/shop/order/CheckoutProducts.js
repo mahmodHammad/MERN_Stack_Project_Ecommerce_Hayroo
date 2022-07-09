@@ -54,7 +54,7 @@ export const CheckoutComponent = (props) => {
   }
   return (
     <Fragment>
-      <section className="mx-4 mt-20 md:mx-12 md:mt-32 lg:mt-24">
+      <section className="mx-4 mt-20 md:mx-12 md:mt-32 lg:mt-25">
         <div className="text-2xl mx-2">Order</div>
         {/* Product List */}
         <div className="flex flex-col md:flex md:space-x-2 md:flex-row">
@@ -135,7 +135,7 @@ export const CheckoutComponent = (props) => {
                       )
                     }
                     className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
-                    style={{ background: "#303031" }}
+                    style={{ background: "#04aa6d" }}
                   >
                     Pay now
                   </div>

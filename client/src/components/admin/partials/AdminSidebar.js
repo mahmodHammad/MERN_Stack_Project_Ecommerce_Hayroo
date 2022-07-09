@@ -18,7 +18,7 @@ const AdminSidebar = (props) => {
             location.pathname === "/admin/dashboard"
               ? "border-r-4 border-gray-800 bg-gray-100"
               : ""
-          } hover:bg-gray-200 cursor-pointer flex flex-col items-center justify-center py-6`}
+          } hover:bg-grey-500 cursor-pointer flex flex-col items-center justify-center py-6`}
         >
           <span>
             <svg
@@ -45,7 +45,7 @@ const AdminSidebar = (props) => {
             location.pathname === "/admin/dashboard/categories"
               ? "border-r-4 border-gray-800 bg-gray-100"
               : ""
-          } hover:bg-gray-200 cursor-pointer flex flex-col items-center justify-center py-6`}
+          } hover:bg-grey-500 cursor-pointer flex flex-col items-center justify-center py-6`}
         >
           <span>
             <svg
@@ -72,7 +72,7 @@ const AdminSidebar = (props) => {
             location.pathname === "/admin/dashboard/products"
               ? "border-r-4 border-gray-800 bg-gray-100"
               : ""
-          } hover:bg-gray-200 cursor-pointer flex flex-col items-center justify-center py-6`}
+          } hover:bg-grey-500 cursor-pointer flex flex-col items-center justify-center py-6`}
         >
           <span>
             <svg
@@ -99,7 +99,7 @@ const AdminSidebar = (props) => {
             location.pathname === "/admin/dashboard/orders"
               ? "border-r-4 border-gray-800 bg-gray-100"
               : ""
-          } hover:bg-gray-200 cursor-pointer flex flex-col items-center justify-center py-6`}
+          } hover:bg-grey-500 cursor-pointer flex flex-col items-center justify-center py-6`}
         >
           <span>
             <svg

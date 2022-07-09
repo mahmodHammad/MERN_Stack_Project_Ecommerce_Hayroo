@@ -11,7 +11,7 @@ const ProductMenu = (props) => {
         <div className="flex items-center">
           {/* It's open the add product modal */}
           <span
-            style={{ background: "#303031" }}
+            style={{ background: "#04aa6d" }}
             onClick={(e) =>
               dispatch({ type: "addProductModal", payload: true })
             }

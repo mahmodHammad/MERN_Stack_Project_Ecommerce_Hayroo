@@ -30,7 +30,7 @@ const CategoryList = () => {
   return (
     <div className={`${data.categoryListDropdown ? "" : "hidden"} my-4`}>
       <hr />
-      <div className="py-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="py-1 grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12">
         {categories && categories.length > 0 ? (
           categories.map((item, index) => {
             return (
@@ -108,8 +108,8 @@ const FilterList = () => {
         <div className="flex justify-between items-center">
           <div className="flex flex-col space-y-2  w-2/3 lg:w-2/4">
             <label htmlFor="points" className="text-sm">
-              Price (between 0 and 10$):{" "}
-              <span className="font-semibold text-yellow-700">{range}.00$</span>{" "}
+              Price (between 0 and 10 EGP):{" "}
+              <span className="font-semibold text-green-600">{range}.00 EGP</span>{" "}
             </label>
             <input
               value={range}
@@ -124,7 +124,7 @@ const FilterList = () => {
           </div>
           <div onClick={(e) => closeFilterBar()} className="cursor-pointer">
             <svg
-              className="w-8 h-8 text-gray-700 hover:bg-gray-200 rounded-full p-1"
+              className="w-8 h-8 text-gray-700 hover:bg-grey-500 rounded-full p-1"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -196,7 +196,7 @@ const Search = () => {
       />
       <div onClick={(e) => closeSearchBar()} className="cursor-pointer">
         <svg
-          className="w-8 h-8 text-gray-700 hover:bg-gray-200 rounded-full p-1"
+          className="w-8 h-8 text-gray-700 hover:bg-grey-500 rounded-full p-1"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

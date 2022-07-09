@@ -4,7 +4,7 @@ const SearchFilter = (props) => {
   return (
     <Fragment>
       <div className="rounded-full flex items-center justify-between overflow-hidden">
-        <span style={{ background: "#303031" }} className="py-2 px-3">
+        <span style={{ background: "#04aa6d" }} className="py-2 px-3">
           <svg
             className="rounded-l-full w-6 h-6 text-gray-100"
             fill="currentColor"

@@ -68,7 +68,7 @@ const CartModal = () => {
         } fixed z-40 inset-0 flex items-start justify-end`}
       >
         <div
-          style={{ background: "#303031" }}
+          style={{ background: "#282a35" }}
           className="w-full md:w-5/12 lg:w-4/12 h-full flex flex-col justify-between"
         >
           <div className="overflow-y-auto">

@@ -61,7 +61,7 @@ const AllReviews = (props) => {
                     <div className="flex flex-col">
                       <div className="flex flex-col">
                         <span>{item.user ? item.user.name : ""}</span>
-                        <span className="text-sm text-yellow-700">
+                        <span className="text-sm text-green-600">
                           {moment(item.createdAt).format("lll")}
                         </span>
                       </div>
@@ -74,7 +74,7 @@ const AllReviews = (props) => {
                           return (
                             <span key={index}>
                               <svg
-                                className="w-4 h-4 fill-current text-yellow-700"
+                                className="w-4 h-4 fill-current text-green-600"
                                 fill="currentColor"
                                 viewBox="0 0 20 20"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@ const AllReviews = (props) => {
                             className="hover:bg-gray-300 p-2 rounded-full cursor-pointer"
                           >
                             <svg
-                              className="w-6 h-6 text-yellow-700"
+                              className="w-6 h-6 text-green-600"
                               fill="none"
                               stroke="currentColor"
                               viewBox="0 0 24 24"

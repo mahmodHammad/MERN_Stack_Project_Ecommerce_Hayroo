@@ -67,7 +67,7 @@ const EditCategoryModal = (props) => {
             </span>
             {/* Close Modal */}
             <span
-              style={{ background: "#303031" }}
+              style={{ background: "#04aa6d" }}
               onClick={(e) => dispatch({ type: "editCategoryModalClose" })}
               className="cursor-pointer text-gray-100 py-2 px-2 rounded-full"
             >
@@ -118,7 +118,7 @@ const EditCategoryModal = (props) => {
           </div>
           <div className="flex flex-col space-y-1 w-full pb-4 md:pb-6">
             <button
-              style={{ background: "#303031" }}
+              style={{ background: "#04aa6d" }}
               onClick={(e) => submitForm()}
               className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
             >

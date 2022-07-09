@@ -121,7 +121,7 @@ const EditProductModal = (props) => {
             </span>
             {/* Close Modal */}
             <span
-              style={{ background: "#303031" }}
+              style={{ background: "#04aa6d" }}
               onClick={(e) =>
                 dispatch({ type: "editProductModalClose", payload: false })
               }
@@ -348,7 +348,7 @@ const EditProductModal = (props) => {
             </div>
             <div className="flex flex-col space-y-1 w-full pb-4 md:pb-6 mt-4">
               <button
-                style={{ background: "#303031" }}
+                style={{ background: "#04aa6d" }}
                 type="submit"
                 className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
               >

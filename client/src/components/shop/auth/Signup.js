@@ -169,7 +169,7 @@ const Signup = (props) => {
         </div>
         <div
           onClick={(e) => formSubmit()}
-          style={{ background: "#303031" }}
+          style={{ background: "#04aa6d" }}
           className="px-4 py-2 text-white text-center cursor-pointer font-medium"
         >
           Create an account

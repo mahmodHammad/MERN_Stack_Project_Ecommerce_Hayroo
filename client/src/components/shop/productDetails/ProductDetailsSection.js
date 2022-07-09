@@ -139,7 +139,7 @@ const ProductDetailsSection = (props) => {
                   onClick={(e) =>
                     slideImage("increase", null, count, setCount, pImages)
                   }
-                  className="flex justify-center  w-12 h-12 text-gray-700 opacity-25 cursor-pointer hover:text-yellow-700 hover:opacity-100"
+                  className="flex justify-center  w-12 h-12 text-gray-700 opacity-25 cursor-pointer hover:text-green-600 hover:opacity-100"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -156,7 +156,7 @@ const ProductDetailsSection = (props) => {
                   onClick={(e) =>
                     slideImage("increase", null, count, setCount, pImages)
                   }
-                  className="flex justify-center  w-12 h-12 text-gray-700 opacity-25 cursor-pointer hover:text-yellow-700 hover:opacity-100"
+                  className="flex justify-center  w-12 h-12 text-gray-700 opacity-25 cursor-pointer hover:text-green-600 hover:opacity-100"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -176,15 +176,15 @@ const ProductDetailsSection = (props) => {
             <div className="flex flex-col leading-8">
               <div className="text-2xl tracking-wider">{sProduct.pName}</div>
               <div className="flex justify-between items-center">
-                <span className="text-xl tracking-wider text-yellow-700">
-                  ${sProduct.pPrice}.00
+                <span className="text-xl tracking-wider text-green-600">
+                  EGP {sProduct.pPrice}.00
                 </span>
                 <span>
                   <svg
                     onClick={(e) => isWishReq(e, sProduct._id, setWlist)}
                     className={`${
                       isWish(sProduct._id, wList) && "hidden"
-                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700`}
+                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-green-600`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -201,7 +201,7 @@ const ProductDetailsSection = (props) => {
                     onClick={(e) => unWishReq(e, sProduct._id, setWlist)}
                     className={`${
                       !isWish(sProduct._id, wList) && "hidden"
-                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-yellow-700`}
+                    } w-5 h-5 md:w-6 md:h-6 cursor-pointer text-green-600`}
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -387,7 +387,7 @@ const ProductDetailsSection = (props) => {
                           totalCost
                         )
                       }
-                      style={{ background: "#303031" }}
+                      style={{ background: "#04aa6d" }}
                       className={`px-4 py-2 text-white text-center cursor-pointer uppercase`}
                     >
                       Add to cart

@@ -55,7 +55,7 @@ const ProfileComponent = () => {
     <Fragment>
       <div className="flex flex-col w-full my-4 md:my-0 md:w-9/12 md:px-8">
         <div className="shadow-lg border">
-          <div className="py-4 px-4 text-lg font-semibold border-t-2 border-yellow-700">
+          <div className="py-4 px-4 text-lg font-semibold border-t-2 border-green-700">
             Personal Information
           </div>
           <hr />
@@ -102,7 +102,7 @@ const ProfileComponent = () => {
             </div>
             <div
               onClick={(e) => handleSubmit()}
-              style={{ background: "#303031" }}
+              style={{ background: "#04aa6d" }}
               className="w-full text-center cursor-pointer px-4 py-2 text-gray-100"
             >
               Update Information

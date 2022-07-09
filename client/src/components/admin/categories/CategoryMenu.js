@@ -12,7 +12,7 @@ const CategoryMenu = (props) => {
         <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center w-full">
           {/* It's open the add category modal */}
           <div
-            style={{ background: "#303031" }}
+            style={{ background: "#04aa6d" }}
             onClick={(e) =>
               dispatch({ type: "addCategoryModal", payload: true })
             }

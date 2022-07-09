@@ -18,7 +18,7 @@ const Customize = () => {
                 payload: !data.uploadSliderBtn,
               })
             }
-            style={{ background: "#303031" }}
+            style={{ background: "#04aa6d" }}
             className="cursor-pointer rounded-full p-2 flex items-center justify-center text-gray-100 text-sm font-semibold uppercase"
           >
             <svg
@@ -54,12 +54,12 @@ const UploadImageSection = () => {
   return (
     <Fragment>
       <div className="relative m-4 bg-white p-4 shadow-lg">
-        <h1 className="border-b-2 border-yellow-700 mb-4 pb-2 text-2xl font-semibold">
+        <h1 className="border-b-2 border-green-700 mb-4 pb-2 text-2xl font-semibold">
           Shop Slider Images
         </h1>
         <div className="relative flex flex-col space-y-2">
           <div
-            style={{ background: "#303031" }}
+            style={{ background: "#04aa6d" }}
             className="relative z-0 px-4 py-2 rounded text-white flex justify-center space-x-2 md:w-4/12"
           >
             <svg
@@ -82,7 +82,7 @@ const UploadImageSection = () => {
             onChange={(e) => uploadImageHandler(e.target.files[0])}
             name="image"
             accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*"
-            className="absolute z-10 opacity-0 bg-gray-100"
+            className="absolute z-10 opacity-0 bg-gray-100 cursor-pointer"
             type="file"
             id="image"
           />
@@ -94,7 +94,7 @@ const UploadImageSection = () => {
               payload: !data.uploadSliderBtn,
             })
           }
-          style={{ background: "#303031" }}
+          style={{ background: "#282a35" }}
           className="cursor-pointer absolute top-0 right-0 m-4 rounded-full p-1"
         >
           <svg
@@ -164,7 +164,7 @@ const AllImages = () => {
                 />
                 <span
                   onClick={(e) => deleteImageReq(item._id)}
-                  style={{ background: "#303031" }}
+                  style={{ background: "#04aa6d" }}
                   className="absolute top-0 right-0 m-1 text-white cursor-pointer rounded-full p-1"
                 >
                   <svg

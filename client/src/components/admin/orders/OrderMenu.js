@@ -13,7 +13,7 @@ const OrderMenu = (props) => {
         <div className="flex flex-col space-y-4 md:flex-row md:justify-between md:items-center md:space-y-0 w-full">
           {/* It's open the add order modal */}
           <div
-            style={{ background: "#303031" }}
+            style={{ background: "#04aa6d" }}
             className="relative rounded-full text-gray-100 text-sm font-semibold uppercase"
           >
             <div
@@ -31,7 +31,7 @@ const OrderMenu = (props) => {
               <span className="pr-2">Filter</span>
             </div>
             <div
-              style={{ background: "#303031" }}
+              style={{ background: "#04aa6d" }}
               className={`${
                 dropdown ? "" : "hidden"
               } absolute top-0 left-0 mt-12 rounded-lg overflow-hidden w-full md:w-48 flex flex-col z-10`}
