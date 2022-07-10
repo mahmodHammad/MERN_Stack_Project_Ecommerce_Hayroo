@@ -15,56 +15,32 @@ const AdminNavber = (props) => {
     <Fragment>
       <nav className="sticky z-10 flex items-center shadow-md justify-between px-4 py-4 md:px-8 top-0 w-full bg-white"style={{background: "rgb(40, 42, 53)", color: "white"}}>
         {/*  Large Screen Show  */}
-        <div className="hidden lg:block lg:flex lg:items-center lg:space-x-4 mr-32">
-          <span>
-            <svg
-              className="w-8 h-8 cursor-pointer text-white-600"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+        <div className=" lg:block lg:flex lg:items-center lg:space-x-4 mr-32 flex items-center">
+          <span class="hover:bg-green-500 px-2 py-2 rounded-lg relative cursor-pointer" onClick={(e) => history.push("/")}>
+            
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart4" viewBox="0 0 16 16">
+  <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+</svg>
           </span>
         </div>
         {/*  Large Screen Show  */}
         <div className="hidden lg:block">
           <span
-            onClick={(e) => history.push("/")}
+            // onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.70rem" }}
-            className="flex items-left text-center font-bold uppercase text-white-800 text-2xl cursor-pointer px-2 text-center"
+            className="flex items-left text-center font-bold uppercase text-white-800 text-xl cursor-pointer px-2 text-center"
           >stop&shop
           </span>
         </div>
         {/* Small Screen Show */}
         <div className="lg:hidden flex items-center">
-          <svg
-            id="hamburgerBtn"
-            className="lg:hidden w-8 h-8 cursor-pointer text-white-600"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
+          
           <span
-            onClick={(e) => history.push("/")}
+            // onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.10rem" }}
-            className="flex items-left text-center font-bold uppercase text-white-800 text-2xl cursor-pointer px-2 text-center"
+            className="flex items-left text-center font-bold uppercase text-white-800 text-lg cursor-pointer px-2 text-center"
           >
-            stop & shop
+            stop&shop
           </span>
         </div>
         {/* Both Screen show */}
