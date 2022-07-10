@@ -26,9 +26,9 @@ const AdminNavber = (props) => {
         {/*  Large Screen Show  */}
         <div className="hidden lg:block">
           <span
-            // onClick={(e) => history.push("/")}
+            onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.70rem" }}
-            className="flex items-left text-center font-bold uppercase text-white-800 text-xl cursor-pointer px-2 text-center"
+            className="flex items-left text-center font-bold uppercase text-white-800 text-xl cursor-pointer px-2 text-center cursor-pointer"
           >stop&shop
           </span>
         </div>
@@ -36,10 +36,10 @@ const AdminNavber = (props) => {
         <div className="lg:hidden flex items-center">
           
           <span
-            // onClick={(e) => history.push("/")}
+            onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.10rem" }}
-            className="flex items-left text-center font-bold uppercase text-white-800 text-lg cursor-pointer px-2 text-center"
-          >
+            className="flex items-left text-center font-bold uppercase text-white-800 text-lg cursor-pointer px-2 text-center cursor-pointer"
+          > c
             stop&shop
           </span>
         </div>

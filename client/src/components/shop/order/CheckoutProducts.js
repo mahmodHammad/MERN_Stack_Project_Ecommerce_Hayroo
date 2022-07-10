@@ -137,7 +137,7 @@ export const CheckoutComponent = (props) => {
                     className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
                     style={{ background: "#04aa6d" }}
                   >
-                    Pay now
+                    Pay with Cash on Delivery
                   </div>
                 </div>
               </Fragment>
