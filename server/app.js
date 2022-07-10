@@ -23,6 +23,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const {spawn} = require("child_process")
 const bodyParser = require('body-parser');
 
 
@@ -79,6 +80,26 @@ app.use("/api", brainTreeRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
 app.use("/api/promo", promoRouter);
+app.post("/python",(req,res)=>{
+   var dataToSend;
+   var name="Mohamed"
+   const python = spawn ('python3',['public/uploads/script.py', name]);
+
+   python.stdout.on("data", function(data){
+    dataToSend = data.toString();
+   })
+
+   python.stderr.on('data',data=>{
+    console.log(`stdder: ${data}`);
+   })
+
+   python.on('exit', code=>{
+    console.log(dataToSend)
+   })
+
+   console.log(dataToSend)
+
+})
 
 // Run Server
 const PORT = process.env.PORT || 8000;

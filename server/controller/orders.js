@@ -1,4 +1,6 @@
 const orderModel = require("../models/orders");
+const userModel = require("../models/users");
+
 
 class Order {
   async getAllOrders(req, res) {
@@ -57,13 +59,27 @@ class Order {
           address,
           phone,
         });
+        console.log(allProduct)
         let save = await newOrder.save();
         if (save) {
+          let currentUser = userModel.findById(user, function(err,doc){
+            if(doc){
+              let oldHist=doc.history
+              allProduct.forEach(item => {
+                oldHist.push(item.id)
+              });
+              let updatedUser =  userModel.findByIdAndUpdate(user, {
+                history: oldHist
+              }, function (err, result){});
+            }
+          })
           return res.json({ success: "Order created successfully" });
         }
       } catch (err) {
-        return res.json({ error: error });
+        return res.json({ error: err });
       }
+      
+      
     }
   }
 
