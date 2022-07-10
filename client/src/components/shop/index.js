@@ -10,8 +10,10 @@ import PageNotFound from "./layout/PageNotFound";
 import ProductDetails from "./productDetails";
 import ProductByCategory from "./home/ProductByCategory";
 import CheckoutPage from "./order/CheckoutPage";
+import { RecommendPage } from "./home/recommend";
 
 export {
+  RecommendPage,
   Home,
   WishList,
   ProtectedRoute,
@@ -26,4 +28,5 @@ export {
   ProductDetails,
   ProductByCategory,
   CheckoutPage,
+  
 };

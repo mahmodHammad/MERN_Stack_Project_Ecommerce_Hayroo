@@ -5,6 +5,7 @@ import "./style.css";
 import { logout } from "./Action";
 import { LayoutContext } from "../index";
 import { isAdmin } from "../auth/fetchApi";
+// import {RecommendPage} from "../home/recommend.js";
 
 const Navber = (props) => {
   const history = useHistory();
@@ -35,9 +36,10 @@ const Navber = (props) => {
           <div className="hidden lg:block col-span-1 flex text-white-600 mt-1">
             <span
               className="hover:bg-green-500 px-4 py-3 rounded-lg font-light tracking-widest hover:text-white-800 cursor-pointer"
-              onClick={(e) => history.push("/")}
+              onClick={() => history.push("/shop/home/recommend")}
+                
             >
-              Shop
+              Recommended Products
             </span>
             {/* <span
               className="hover:bg-green-500 px-4 py-3 rounded-lg font-light tracking-widest hover:text-white-800 cursor-pointer"
@@ -52,7 +54,7 @@ const Navber = (props) => {
               Contact us
             </span> */}
           </div>
-          <div className="col-span-2 lg:hidden flex justify-items-stretch	 items-center">
+          <div className="col-span-2 lg:hidden flex justify-items-stretch	 items-center  ">
             <svg
               onClick={(e) => navberToggleOpen()}
               className="col-span-1 lg:hidden w-8 h-8 cursor-pointer text-white-600"
@@ -69,7 +71,7 @@ const Navber = (props) => {
               />
             </svg>
             <span
-              // onClick={(e) => history.push("/")}
+              onClick={(e) => history.push("/")}
               style={{ letterSpacing: "0.10rem" }}
               className="flex items-left text-center font-bold uppercase text-white-800 sm-text-2xl px-2 text-center "
             >
@@ -77,7 +79,7 @@ const Navber = (props) => {
             </span>
           </div>
           <div
-            // onClick={(e) => history.push("/")}
+            onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.70rem" }}
             className="hidden lg:block flex items-left col-span-1 text-center text-white-800 font-bold tracking-widest uppercase text-xl "
           >
