@@ -6,7 +6,7 @@ const SearchFilter = (props) => {
       <div className="rounded-full flex items-center justify-between overflow-hidden">
         <span style={{ background: "#04aa6d" }} className="py-2 px-3">
           <svg
-            className="rounded-l-full w-6 h-6 text-gray-100"
+            className="rounded-l-full w-6 h-6 text-gray-100 cursor-pointer"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
