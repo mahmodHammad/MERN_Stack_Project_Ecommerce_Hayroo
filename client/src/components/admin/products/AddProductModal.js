@@ -21,6 +21,7 @@ const AddProductDetail = ({ categories }) => {
     pQuantity: "",
     success: false,
     error: false,
+    tags:""
   });
 
   const fetchData = async () => {
@@ -40,10 +41,12 @@ const AddProductDetail = ({ categories }) => {
     e.target.reset();
 
     if (!fData.pImage) {
+      
       setFdata({ ...fData, error: "Please upload at least 2 image" });
       setTimeout(() => {
         setFdata({ ...fData, error: false });
       }, 2000);
+
     }
 
     try {
@@ -62,6 +65,7 @@ const AddProductDetail = ({ categories }) => {
           pOffer: 0,
           success: responseData.success,
           error: false,
+          tags:""
         });
         setTimeout(() => {
           setFdata({
@@ -76,6 +80,7 @@ const AddProductDetail = ({ categories }) => {
             pOffer: 0,
             success: false,
             error: false,
+            tags:""
           });
         }, 2000);
       } else if (responseData.error) {
@@ -194,7 +199,16 @@ const AddProductDetail = ({ categories }) => {
             </div>
             <div className="flex flex-col space-y-2">
               <label htmlFor="features" >Product tags*</label>
-              <textarea placeholder="[tag1,tag2...]"
+              <textarea placeholder='["tag1","tag2"...]'
+                value={fData.tags}
+                onChange={(e) =>
+                  setFdata({
+                    ...fData,
+                    error: false,
+                    success: false,
+                    tags: e.target.value,
+                  })
+                }
               //edit here
                 // value={fData.pDescription}
                 // onChange={(e) =>
