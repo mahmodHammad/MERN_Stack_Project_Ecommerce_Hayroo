@@ -9,8 +9,8 @@ const AdminSidebar = (props) => {
     <Fragment>
       <div
         style={{ boxShadow: "1px 1px 8px 0.2px #aaaaaa" }}
-        id="sidebar"
-        className="hidden md:block sticky top-0 left-0 h-screen md:w-3/12 lg:w-2/12 sidebarShadow bg-white text-gray-600"
+        
+        className="sticky top-0 left-0 h-screen md:w-3/12 lg:w-2/12 sidebarShadow bg-white text-gray-600" id="sidebar"
       >
         <div
           onClick={(e) => history.push("/admin/dashboard")}
