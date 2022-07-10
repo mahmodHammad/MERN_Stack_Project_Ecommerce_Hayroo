@@ -1,5 +1,6 @@
 import React from "react";
 import {
+  RecommendPage,
   Home,
   WishList,
   ProtectedRoute,
@@ -12,6 +13,7 @@ import {
 } from "./shop";
 import { DashboardAdmin, Categories, Products, Orders } from "./admin";
 import { UserProfile, UserOrders, SettingUser } from "./shop/dashboardUser";
+//import { recommendpage } from "./shop/home/recommend";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -22,6 +24,8 @@ const Routes = (props) => {
       <Switch>
         {/* Shop & Public Routes */}
         <Route exact path="/" component={Home} />
+        <Route exact path="/shop/home/recommend" component={RecommendPage} />
+        
         <Route exact path="/wish-list" component={WishList} />
         <Route exact path="/products/:id" component={ProductDetails} />
         <Route
