@@ -11,15 +11,19 @@ const pageContext = createContext();
 const PageContent = () => {
   return (
     <Fragment>
-      {/* Category, Search & Filter Section */}
-      <section className="m-4 md:mx-8 md:my-10">
-       
-      </section>
-      {/* Product Section */}
-      <section className="m-4 md:mx-8 md:my-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-       
-      </section>
-    </Fragment>
+      
+    {/* Category, Search & Filter Section */}
+    <section className="m-4 md:mx-8 md:my-10">
+      <h1 style={{marginTop:"120px",textAlign:"center"}}>
+       This is the your recommend page
+      </h1>
+    </section>
+    {/* Product Section */}
+    <section className="m-4 md:mx-8 md:my-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+ 
+      {/* <SingleProduct /> */}
+    </section>
+  </Fragment>
   );
 };
 

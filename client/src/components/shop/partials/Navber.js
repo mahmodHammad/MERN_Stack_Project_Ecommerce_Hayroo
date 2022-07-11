@@ -36,7 +36,7 @@ const Navber = (props) => {
           <div className="hidden lg:block col-span-1 flex text-white-600 mt-1">
             <span
               className="hover:bg-green-500 px-4 py-3 rounded-lg font-light tracking-widest hover:text-white-800 cursor-pointer"
-              onClick={() => history.push("/shop/home/recommend")}
+              onClick={() => history.push("/recommend")}
                 
             >
               Recommended Products
