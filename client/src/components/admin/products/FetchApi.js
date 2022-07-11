@@ -28,7 +28,7 @@ export const createProduct = async ({
   pQuantity,
   pPrice,
   pOffer,
-  tags,
+  pFeatures,
 }) => {
   /* Most important part for uploading multiple image  */
   let formData = new FormData();
@@ -43,7 +43,8 @@ export const createProduct = async ({
   formData.append("pQuantity", pQuantity);
   formData.append("pPrice", pPrice);
   formData.append("pOffer", pOffer);
-  formData.append("tags", tags);
+  formData.append("pFeatures", pFeatures);
+  console.log("formData",formData.entries())
   
   try {
     let res = await axios.post(`${apiURL}api/product/add-product`, formData);

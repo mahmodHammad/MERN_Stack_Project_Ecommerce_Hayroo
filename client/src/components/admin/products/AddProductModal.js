@@ -21,7 +21,7 @@ const AddProductDetail = ({ categories }) => {
     pQuantity: "",
     success: false,
     error: false,
-    tags:""
+    pFeatures:""
   });
 
   const fetchData = async () => {
@@ -65,7 +65,7 @@ const AddProductDetail = ({ categories }) => {
           pOffer: 0,
           success: responseData.success,
           error: false,
-          tags:""
+          pFeatures:""
         });
         setTimeout(() => {
           setFdata({
@@ -80,7 +80,7 @@ const AddProductDetail = ({ categories }) => {
             pOffer: 0,
             success: false,
             error: false,
-            tags:""
+            pFeatures:""
           });
         }, 2000);
       } else if (responseData.error) {
@@ -198,15 +198,15 @@ const AddProductDetail = ({ categories }) => {
               />
             </div>
             <div className="flex flex-col space-y-2">
-              <label htmlFor="features" >Product tags*</label>
+              <label htmlFor="features" >Product pFeatures*</label>
               <textarea placeholder='["tag1","tag2"...]'
-                value={fData.tags}
+                value={fData.pFeatures}
                 onChange={(e) =>
                   setFdata({
                     ...fData,
                     error: false,
                     success: false,
-                    tags: e.target.value,
+                    pFeatures: e.target.value,
                   })
                 }
               //edit here
