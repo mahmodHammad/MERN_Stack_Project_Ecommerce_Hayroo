@@ -129,11 +129,15 @@ const ProductDetailsSection = (props) => {
           </div>
           <div className="col-span-2 md:col-span-7">
             <div className="relative">
-              <img
+            <div style={{height:"25vw" }}>
+                 <img
                 className="w-full"
                 src={`${apiURL}images/${sProduct.pImages[count]}`}
+                style={{width:"100%",height:"100%",objectFit: "contain"}}
                 alt="Pic"
               />
+            </div>
+             
               <div className="absolute inset-0 flex justify-between items-center mb-4">
                 <svg
                   onClick={(e) =>
