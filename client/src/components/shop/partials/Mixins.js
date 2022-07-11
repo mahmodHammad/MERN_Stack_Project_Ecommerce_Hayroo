@@ -1,3 +1,4 @@
+
 export const subTotal = (id, price) => {
   let subTotalCost = 0;
   let carts = JSON.parse(localStorage.getItem("cart"));
@@ -6,6 +7,8 @@ export const subTotal = (id, price) => {
       subTotalCost = item.quantitiy * price;
     }
   });
+
+
   return subTotalCost;
 };
 
@@ -26,5 +29,10 @@ export const totalCost = () => {
   carts.forEach((item) => {
     totalCost += item.quantitiy * item.price;
   });
+
   return totalCost;
 };
+
+export const applyPromo = (amount)=>{
+  return  totalCost() * (1-amount)
+}

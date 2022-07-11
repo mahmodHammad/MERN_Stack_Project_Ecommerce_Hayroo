@@ -30,3 +30,16 @@ export const createOrder = async (orderData) => {
     console.log(error);
   }
 };
+
+export const handlePromoCode = async(code)=>{
+  console.log("CODE",code)
+  try {
+    let res = await axios.post(`${apiURL}api/promo/check-promo`, {code});
+    console.log("resss promo",res)
+    return res.data;
+  } catch (error) {
+    console.log(error);
+  }
+
+}
+

@@ -5,7 +5,7 @@ import { subTotal, quantity, totalCost } from "../partials/Mixins";
 
 import { cartListProduct } from "../partials/FetchApi";
 import { getBrainTreeToken, getPaymentProcess } from "./FetchApi";
-import { fetchData, fetchbrainTree, pay } from "./Action";
+import { fetchData, fetchbrainTree, pay ,checkPromoCode} from "./Action";
 
 import DropIn from "braintree-web-drop-in-react";
 
@@ -22,6 +22,7 @@ export const CheckoutComponent = (props) => {
     success: false,
     clientToken: null,
     instance: {},
+    code:""
   });
 
   useEffect(() => {
@@ -112,6 +113,33 @@ export const CheckoutComponent = (props) => {
                       className="border px-4 py-2"
                       placeholder="+880"
                     />
+                  </div>
+                  <div className="flex flex-col py-2 mb-2">
+                      <label htmlFor="phone" className="pb-2">
+                        PromoCode
+                      </label>
+                      <input
+                        value={state.code}
+                        onChange={(e) =>
+                          setState({
+                            ...state,
+                            code: e.target.value,
+                            error: false,
+                          })
+                        }
+                        id="code"
+                        className="border px-4 py-2"
+                        placeholder="Optional"
+                      />
+                      <div
+                        onClick={(e) =>
+                            checkPromoCode(state.code)
+                        }
+                        className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
+                        style={{ background: "#04aa6d" }}
+                      >
+                        Check PromoCode
+                      </div>
                   </div>
                   <DropIn
                     options={{
