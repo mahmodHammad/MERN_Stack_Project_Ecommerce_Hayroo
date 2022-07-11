@@ -115,6 +115,11 @@ class Product {
       pImages,
     } = req.body;
     let editImages = req.files;
+    let allEditImages = []
+    let result1 = await uploadImage(editImages[0]);
+    allEditImages.push(result1.key)
+    let result2 = await uploadImage(edtiImages[1]);
+    allEditImages.push(result2.key)
 
     // Validate other fileds
     if (
@@ -137,7 +142,6 @@ class Product {
     }
     // Validate Update Images
     else if (editImages && editImages.length == 1) {
-      Product.deleteImages(editImages, "file");
       return res.json({ error: "Must need to provide 2 images" });
     } else {
       let editData = {
@@ -151,12 +155,8 @@ class Product {
         pStatus,
       };
       if (editImages.length == 2) {
-        let allEditImages = [];
-        for (const img of editImages) {
-          allEditImages.push(img.filename);
-        }
+        
         editData = { ...editData, pImages: allEditImages };
-        Product.deleteImages(pImages.split(","), "string");
       }
       try {
         let editProduct = productModel.findByIdAndUpdate(pId, editData);
@@ -180,7 +180,6 @@ class Product {
         let deleteProduct = await productModel.findByIdAndDelete(pId);
         if (deleteProduct) {
           // Delete Image from uploads -> products folder
-          Product.deleteImages(deleteProductObj.pImages, "string");
           return res.json({ success: "Product deleted successfully" });
         }
       } catch (err) {

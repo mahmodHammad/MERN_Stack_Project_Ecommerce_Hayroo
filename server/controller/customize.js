@@ -4,6 +4,8 @@ const productModel = require("../models/products");
 const orderModel = require("../models/orders");
 const userModel = require("../models/users");
 const customizeModel = require("../models/customize");
+const {uploadImage} = require('../s3')
+
 
 class Customize {
   async getImages(req, res) {
@@ -18,13 +20,15 @@ class Customize {
   }
 
   async uploadSlideImage(req, res) {
-    let image = req.file.filename;
+    let image = req.file;
+    let result1 = await uploadImage(image);
+
     if (!image) {
       return res.json({ error: "All field required" });
     }
     try {
       let newCustomzie = new customizeModel({
-        slideImage: image,
+        slideImage: result1.key,
       });
       let save = await newCustomzie.save();
       if (save) {

@@ -22,7 +22,7 @@ const Slider = (props) => {
         {data.sliderImages.length > 0 ? (
           <img style={{height:"40vh" ,objectFit:"cover",borderRadius:"10px"}} 
             className="w-full h-25"
-            src={`${apiURL}uploads/customize/${data.sliderImages[slide].slideImage}`}
+            src={`${apiURL}images/${data.sliderImages[slide].slideImage}`}
             alt="sliderImage"
            />
         ) : (

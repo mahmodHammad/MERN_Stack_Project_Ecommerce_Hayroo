@@ -1,6 +1,7 @@
 const { toTitleCase } = require("../config/function");
 const categoryModel = require("../models/categories");
 const fs = require("fs");
+const {uploadImage} = require('../s3')
 
 class Category {
   async getAllCategory(req, res) {
@@ -16,8 +17,9 @@ class Category {
 
   async postAddCategory(req, res) {
     let { cName, cDescription, cStatus } = req.body;
-    let cImage = req.file.filename;
-    const filePath = `../server/public/uploads/categories/${cImage}`;
+    let cImage = req.file;
+    let result1 = await uploadImage(cImage);
+    cImage = result1.key
 
     if (!cName || !cDescription || !cStatus || !cImage) {
       fs.unlink(filePath, (err) => {
@@ -83,18 +85,8 @@ class Category {
     } else {
       try {
         let deletedCategoryFile = await categoryModel.findById(cId);
-        const filePath = `../server/public/uploads/categories/${deletedCategoryFile.cImage}`;
 
         let deleteCategory = await categoryModel.findByIdAndDelete(cId);
-        if (deleteCategory) {
-          // Delete Image from uploads -> categories folder 
-          fs.unlink(filePath, (err) => {
-            if (err) {
-              console.log(err);
-            }
-            return res.json({ success: "Category deleted successfully" });
-          });
-        }
       } catch (err) {
         console.log(err);
       }
