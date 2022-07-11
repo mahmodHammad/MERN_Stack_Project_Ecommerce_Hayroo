@@ -17,13 +17,14 @@ const Slider = (props) => {
 
   return (
     <Fragment>
-      <div className="relative mt-16 bg-gray-100 border-2">
+      {/* <section style={{height: "1px"}}> */}
+      <div className="h-25 mt-20 bg-gray-100 border-2" >
         {data.sliderImages.length > 0 ? (
-          <img
-            className="w-full"
+          <img style={{height:"40vh" ,objectFit:"cover",borderRadius:"10px"}} 
+            className="w-full h-25"
             src={`${apiURL}uploads/customize/${data.sliderImages[slide].slideImage}`}
             alt="sliderImage"
-          />
+           />
         ) : (
           ""
         )}
@@ -68,6 +69,7 @@ const Slider = (props) => {
           </>
         ) : null}
       </div>
+      {/* </section> */}
       <OrderSuccessMessage />
     </Fragment>
   );
