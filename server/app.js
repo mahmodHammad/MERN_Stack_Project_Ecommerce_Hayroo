@@ -93,7 +93,7 @@ app.get("/images/:key", (req,res)=>{
 app.post("/python",(req,res)=>{
    var dataToSend;
    var name="Mohamed"
-   const python = spawn ('python3',['public/uploads/script.py', name]);
+   const python = spawn ('python3',['./script.py', name]);
 
    python.stdout.on("data", function(data){
     dataToSend = data.toString();

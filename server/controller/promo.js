@@ -6,16 +6,23 @@ class Promo {
   async checkPromo(req, res) {
     let promo=req.body;
     let code= await promoModel.find({code:promo.code});
-    let today = new Date();
-    let expire = new Date(code[0].expire);
+    console.log(code)
 
-    if(code && today<expire){
+    if(code.length!=0){
+      let today = new Date();
+      let expire = new Date(code[0].expire);  
+      if (today<expire){
         return res.json({ 
-            active: true,
-            discount: code[0].discount
-         });
-    } else {
+          active: true,
+          discount: code[0].discount
+       });
+      }
+      else{
         return res.json({active: false});
+      }
+        
+    } else {
+      return res.json({active: false});
     }
   }
 
