@@ -25,6 +25,8 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const {spawn} = require("child_process")
 const bodyParser = require('body-parser');
+const {downloadImage} = require('./s3')
+
 
 
 // Import Router
@@ -80,6 +82,14 @@ app.use("/api", brainTreeRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
 app.use("/api/promo", promoRouter);
+
+app.get("/images/:key", (req,res)=>{
+  const key = req.params.key
+  const readStream = downloadImage(key)
+
+  readStream.pipe(res)
+})
+
 app.post("/python",(req,res)=>{
    var dataToSend;
    var name="Mohamed"

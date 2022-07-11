@@ -1,31 +1,33 @@
 const productModel = require("../models/products");
 const fs = require("fs");
-const path = require("path");
+const path = require("path")
+const {uploadImage} = require('../s3')
+
 
 class Product {
   // Delete Image from uploads -> products folder
-  static deleteImages(images, mode) {
-    var basePath =
-      path.resolve(__dirname + "../../") + "/public/uploads/products/";
-    console.log(basePath);
-    for (var i = 0; i < images.length; i++) {
-      let filePath = "";
-      if (mode == "file") {
-        filePath = basePath + `${images[i].filename}`;
-      } else {
-        filePath = basePath + `${images[i]}`;
-      }
-      console.log(filePath);
-      if (fs.existsSync(filePath)) {
-        console.log("Exists image");
-      }
-      fs.unlink(filePath, (err) => {
-        if (err) {
-          return err;
-        }
-      });
-    }
-  }
+  // static deleteImages(images, mode) {
+  //   var basePath =
+  //     path.resolve(__dirname + "../../") + "/public/uploads/products/";
+  //   console.log(basePath);
+  //   for (var i = 0; i < images.length; i++) {
+  //     let filePath = "";
+  //     if (mode == "file") {
+  //       filePath = basePath + `${images[i].filename}`;
+  //     } else {
+  //       filePath = basePath + `${images[i]}`;
+  //     }
+  //     console.log(filePath);
+  //     if (fs.existsSync(filePath)) {
+  //       console.log("Exists image");
+  //     }
+  //     fs.unlink(filePath, (err) => {
+  //       if (err) {
+  //         return err;
+  //       }
+  //     });
+  //   }
+  // }
 
   async getAllProduct(req, res) {
     try {
@@ -44,7 +46,15 @@ class Product {
   async postAddProduct(req, res) {
     let { pName, pDescription, pPrice, pQuantity, pCategory, pOffer, pFeatures, pStatus } =
       req.body;
+      console.log(req.body)
     let images = req.files;
+    let allImages = []
+    let result1 = await uploadImage(images[0]);
+    allImages.push(result1.key)
+    let result2 = await uploadImage(images[1]);
+    allImages.push(result2.key)
+
+
     // Validation
     if (
       !pName |
@@ -55,25 +65,20 @@ class Product {
       !pOffer |
       !pStatus
     ) {
-      Product.deleteImages(images, "file");
       return res.json({ error: "All filled must be required" });
     }
     // Validate Name and description
     else if (pName.length > 255 || pDescription.length > 3000) {
-      Product.deleteImages(images, "file");
       return res.json({
         error: "Name 255 & Description must not be 3000 charecter long",
       });
     }
     // Validate Images
     else if (images.length !== 2) {
-      Product.deleteImages(images, "file");
       return res.json({ error: "Must need to provide 2 images" });
     } else {
       try {
-        let allImages = [];
         for (const img of images) {
-          allImages.push(img.filename);
         }
         let newProduct = new productModel({
           pImages: allImages,
