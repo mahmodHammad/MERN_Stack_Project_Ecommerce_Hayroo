@@ -371,9 +371,9 @@ const Navber = (props) => {
           <div className="col-span-1 flex flex-col text-white-600">
             <span
               className="font-medium text-lg tracking-widest hover:text-white-800 hover:bg-green-500 px-3 py-2 rounded-lg cursor-pointer"
-              onClick={(e) => history.push("/")}
+              onClick={(e) => history.push("/recommend")}
             >
-              Shop
+              Recommended page
             </span>
             {/* <span
               className="font-medium text-lg tracking-widest hover:text-white-800 hover:bg-green-500 px-3 py-2 rounded-lg cursor-pointer"
