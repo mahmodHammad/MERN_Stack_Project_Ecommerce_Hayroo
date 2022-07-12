@@ -51,18 +51,22 @@ const AllProduct = ({ products }) => {
   return (
     <Fragment>
       <Submenu category={category} />
-      <section className="m-4 md:mx-8 md:my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <section
+      className="m-4 md:mx-8 md:my-4 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {products && products.length > 0 ? (
           products.map((item, index) => {
             return (
               <Fragment key={index}>
                 <div className="relative col-span-1 m-2">
+                <div>
                   <img
+                   style={{height:"25vh",objectFit:"contain"}}
                     onClick={(e) => history.push(`/products/${item._id}`)}
-                    className="w-full object-cover object-center cursor-pointer"
+                    className="w-full object-center cursor-pointer"
                     src={`${apiURL}images/${item.pImages[0]}`}
                     alt=""
-                  />
+                    />
+                  </div>
                   <div className="flex items-center justify-between mt-2">
                     <div className="text-gray-600 font-light truncate">
                       {item.pName}
@@ -89,23 +93,8 @@ const AllProduct = ({ products }) => {
                       </span>
                     </div>
                   </div>
-                  <div>{item.pPrice}.00$</div>
-                  <div className="absolute top-0 right-0 mx-2 my-2 md:mx-4">
-                    <svg
-                      className="w-5 h-5 md:w-6 md:h-6 cursor-pointer text-green-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-                      />
-                    </svg>
-                  </div>
+                  <div>EGP {item.pPrice}.00</div>
+                 
                 </div>
               </Fragment>
             );

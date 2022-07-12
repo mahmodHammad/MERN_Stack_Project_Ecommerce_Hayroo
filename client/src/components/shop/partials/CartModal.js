@@ -69,7 +69,7 @@ const CartModal = () => {
       >
         <div
           style={{ background: "#282a35" }}
-          className="w-full md:w-5/12 lg:w-4/12 h-full flex flex-col justify-between"
+          className="w-full md:w-8/12 lg:w-4/12 h-full flex flex-col justify-between"
         >
           <div className="overflow-y-auto">
             <div className="border-b border-gray-700 flex justify-between">

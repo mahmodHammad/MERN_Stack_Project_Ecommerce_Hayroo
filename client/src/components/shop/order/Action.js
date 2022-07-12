@@ -33,22 +33,10 @@ export const fetchbrainTree = async (getBrainTreeToken, setState) => {
 };
 
 export const checkPromoCode = async(code)=>{
-   const d =  handlePromoCode(code)
-   const {active, discount} = d
-  //  TODO uncomment
-  //  if(active){
-    if(true){
-    const afterDiscount = applyPromo(10/100)
-    console.log("afterDiscount",afterDiscount)
-    // const newPrice = (discount/100)
-   }else{
-    alert("not valid PromoCode")
-   }
-   console.log("DDDD",d)
-   console.log("active",active)
-   console.log("discount",discount)
-
+   const d = await handlePromoCode(code)
+   return d
 }
+
 export const pay = async (
   data,
   dispatch,
@@ -56,7 +44,7 @@ export const pay = async (
   setState,
   getPaymentProcess,
   totalCost,
-  history
+  history,
 ) => {
 
   if (!state.address) {
@@ -66,7 +54,7 @@ export const pay = async (
   } else {
     let nonce;
     let paymentData = {
-      amountTotal: totalCost(),
+      amountTotal: totalCost(state),
       paymentMethod: "Cash",
     };
     
@@ -77,7 +65,7 @@ export const pay = async (
               let orderData = {
                 allProduct: JSON.parse(localStorage.getItem("cart")),
                 user: JSON.parse(localStorage.getItem("jwt")).user._id,
-                amount: totalCost(),
+                amount: totalCost(state),
                 transactionId: "123444",
                 address: state.address,
                 phone: state.phone,
