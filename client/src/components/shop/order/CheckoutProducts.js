@@ -189,6 +189,7 @@ export const CheckoutComponent = (props) => {
             )}
           </div>
         </div>
+        
       </section>
     </Fragment>
   );
@@ -218,13 +219,13 @@ const CheckoutProducts = ({ products }) => {
                     {product.pName}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
-                    Price : ${product.pPrice}.00{" "}
+                    Price : EGP {product.pPrice}.00{" "}
                   </div>
                   <div className="md:ml-6 font-semibold text-gray-600 text-sm">
                     Quantitiy : {quantity(product._id)}
                   </div>
                   <div className="font-semibold text-gray-600 text-sm">
-                    Subtotal : ${subTotal(product._id, product.pPrice)}.00
+                    Subtotal : EGP {subTotal(product._id, product.pPrice)}.00
                   </div>
                 </div>
               </div>
@@ -233,6 +234,7 @@ const CheckoutProducts = ({ products }) => {
         ) : (
           <div>No product found for checkout</div>
         )}
+        <div>Total cost EGP{totalCost()}.00"</div>
       </div>
     </Fragment>
   );

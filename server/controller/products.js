@@ -53,7 +53,7 @@ class Product {
     allImages.push(result1.key)
     let result2 = await uploadImage(images[1]);
     allImages.push(result2.key)
-    pFeatures=JSON.parse(pFeatures)
+    if(pFeatures.length!=0){pFeatures=JSON.parse(pFeatures)}
 
 
     // Validation
