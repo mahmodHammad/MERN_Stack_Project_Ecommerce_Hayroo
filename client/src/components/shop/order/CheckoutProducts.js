@@ -22,7 +22,8 @@ export const CheckoutComponent = (props) => {
     success: false,
     clientToken: null,
     instance: {},
-    code:""
+    code:"",
+    discount:{active:false,discount:0}
   });
 
   useEffect(() => {
@@ -132,8 +133,13 @@ export const CheckoutComponent = (props) => {
                         placeholder="Optional"
                       />
                       <div
-                        onClick={(e) =>
-                            checkPromoCode(state.code)
+                        onClick={async(e) =>{
+                          let d = await checkPromoCode(state.code)
+                          setState({
+                            ...state,
+                            discount:d
+                          })
+                        }
                         }
                         className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
                         style={{ background: "#04aa6d" }}
@@ -159,7 +165,7 @@ export const CheckoutComponent = (props) => {
                         setState,
                         getPaymentProcess,
                         totalCost,
-                        history
+                        history,
                       )
                     }
                     className="w-full px-4 py-2 text-center text-white font-semibold cursor-pointer"
@@ -187,6 +193,7 @@ export const CheckoutComponent = (props) => {
                 </svg>
               </div>
             )}
+            <div>Total cost EGP{totalCost(state)}.00</div>
           </div>
         </div>
         
@@ -234,7 +241,6 @@ const CheckoutProducts = ({ products }) => {
         ) : (
           <div>No product found for checkout</div>
         )}
-        <div>Total cost EGP{totalCost()}.00"</div>
       </div>
     </Fragment>
   );
