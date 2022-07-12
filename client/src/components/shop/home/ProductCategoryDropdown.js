@@ -30,7 +30,7 @@ const CategoryList = () => {
   return (
     <div className={`${data.categoryListDropdown ? "" : "hidden"} my-4`}>
       <hr />
-      <div className="py-1 grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12">
+      <div className="py-1 grid grid-cols-4 md:grid-cols-8 lg:grid-cols-12 " >
         {categories && categories.length > 0 ? (
           categories.map((item, index) => {
             return (
@@ -41,11 +41,11 @@ const CategoryList = () => {
                   }
                   className="col-span-1 m-2 flex flex-col items-center justify-center space-y-2 cursor-pointer"
                 >
-                  <img
+                  <img style={{height:"50%",width:"50%",objectFit:"contain",}}
                     src={`${apiURL}images/${item.cImage}`}
                     alt="pic"
                   />
-                  <div className="font-medium">{item.cName}</div>
+                  <div className="font-medium text-center">{item.cName}</div>
                 </div>
               </Fragment>
             );

@@ -1,4 +1,6 @@
-import { createOrder } from "./FetchApi";
+import { createOrder, handlePromoCode } from "./FetchApi";
+
+import { applyPromo} from "../partials/Mixins";
 
 export const fetchData = async (cartListProduct, dispatch) => {
   dispatch({ type: "loading", payload: true });
@@ -30,6 +32,23 @@ export const fetchbrainTree = async (getBrainTreeToken, setState) => {
   }
 };
 
+export const checkPromoCode = async(code)=>{
+   const d =  handlePromoCode(code)
+   const {active, discount} = d
+  //  TODO uncomment
+  //  if(active){
+    if(true){
+    const afterDiscount = applyPromo(10/100)
+    console.log("afterDiscount",afterDiscount)
+    // const newPrice = (discount/100)
+   }else{
+    alert("not valid PromoCode")
+   }
+   console.log("DDDD",d)
+   console.log("active",active)
+   console.log("discount",discount)
+
+}
 export const pay = async (
   data,
   dispatch,
@@ -39,7 +58,7 @@ export const pay = async (
   totalCost,
   history
 ) => {
-  console.log(totalCost());
+
   if (!state.address) {
     setState({ ...state, error: "Please provide your address" });
   } else if (!state.phone) {

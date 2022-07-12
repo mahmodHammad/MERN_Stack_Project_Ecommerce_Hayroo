@@ -48,6 +48,63 @@ const AddProductDetail = ({ categories }) => {
       }, 2000);
 
     }
+    if (!fData.pName) {
+      
+      setFdata({ ...fData, error: "Please enter product name" });
+      setTimeout(() => {
+        setFdata({ ...fData, error: false });
+      }, 2000);
+
+    }
+    if (!fData.pDescription) {
+      
+      setFdata({ ...fData, error: "Please enter product Description" });
+      setTimeout(() => {
+        setFdata({ ...fData, error: false });
+      }, 2000);
+
+    }
+    if (!fData.pFeatures) {
+      
+      setFdata({ ...fData, error: "Please enter tags" });
+      setTimeout(() => {
+        setFdata({ ...fData, error: false });
+      }, 2000);
+
+    }
+    if (!fData.pPrice) {
+      
+      setFdata({ ...fData, error: "Please enter price" });
+      setTimeout(() => {
+        setFdata({ ...fData, error: false });
+      }, 2000);
+
+    }
+    if (!fData.pStatus) {
+      
+      setFdata({ ...fData, error: "Please enter product status" });
+      setTimeout(() => {
+        setFdata({ ...fData, error: false });
+      }, 2000);
+
+    }
+
+    if (!fData.pQuantity) {
+      
+      setFdata({ ...fData, error: "Please enter Quantity" });
+      setTimeout(() => {
+        setFdata({ ...fData, error: false });
+      }, 2000);
+
+      if (!fData.pCategory) {
+      
+        setFdata({ ...fData, error: "Please enter category" });
+        setTimeout(() => {
+          setFdata({ ...fData, error: false });
+        }, 2000);
+  
+      }
+    }
 
     try {
       let responseData = await createProduct(fData);
@@ -321,23 +378,7 @@ const AddProductDetail = ({ categories }) => {
                   id="quantity"
                 />
               </div>
-              <div className="w-1/2 flex flex-col space-y-1">
-                <label htmlFor="offer">Product Offfer (%) *</label>
-                <input
-                  value={fData.pOffer}
-                  onChange={(e) =>
-                    setFdata({
-                      ...fData,
-                      error: false,
-                      success: false,
-                      pOffer: e.target.value,
-                    })
-                  }
-                  type="number"
-                  className="px-4 py-2 border focus:outline-none"
-                  id="offer"
-                />
-              </div>
+              
             </div>
             <div className="flex flex-col space-y-1 w-full pb-4 md:pb-6 mt-4">
               <button
