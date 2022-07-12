@@ -2,6 +2,7 @@ export const dashboardState = {
   totalData: [],
   totalOrders: [],
   uploadSliderBtn: true,
+  promocode:false,
   imageUpload: false,
   sliderImages: [],
 };
@@ -23,6 +24,12 @@ export const dashboardReducer = (state, action) => {
         ...state,
         uploadSliderBtn: action.payload,
       };
+      case "promocode":
+      return {
+        ...state,
+        promocode: action.payload,
+      };
+
     case "imageUpload":
       return {
         ...state,
