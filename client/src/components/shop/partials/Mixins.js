@@ -28,10 +28,12 @@ export const totalCost = (state) => {
     totalCost += item.quantitiy * item.price;
   });
   
-  if(state.discount){
-    const {active,discount} = state.discount
-    if(active){
-      totalCost = totalCost * (1-(discount/100))
+  if(state){
+    if(state.discount){
+      const {active,discount} = state.discount
+      if(active){
+        totalCost = totalCost * (1-(discount/100))
+      }
     }
   }
   return totalCost;
