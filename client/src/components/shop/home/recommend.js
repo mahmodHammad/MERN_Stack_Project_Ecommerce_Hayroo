@@ -15,7 +15,7 @@ const PageContent = () => {
     {/* Category, Search & Filter Section */}
     <section className="m-4 md:mx-8 md:my-10">
       <h1 style={{marginTop:"150px",textAlign:"center"}}>
-       This is the your recommend page
+       Your Recommended Products
       </h1>
     </section>
     {/* Product Section */}
