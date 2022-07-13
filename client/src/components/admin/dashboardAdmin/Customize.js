@@ -21,7 +21,8 @@ const Customize = () => {
               })
             }
             style={{ background: "#04aa6d" }}
-            className="cursor-pointer rounded-full p-2 flex items-center justify-center text-gray-100 text-sm font-semibold uppercase"
+            
+            className="cursor-pointer rounded-full p-2 flex items-center justify-center text-gray-100 text-sm font-semibold uppercase mx-2"
           >
             <svg
               className="w-6 h-6 text-gray-100 mr-2"
@@ -36,7 +37,8 @@ const Customize = () => {
               />
             </svg>
             Customize Slider Image
-          </div>
+            </div>
+          
              ) : (
               ""
             )}

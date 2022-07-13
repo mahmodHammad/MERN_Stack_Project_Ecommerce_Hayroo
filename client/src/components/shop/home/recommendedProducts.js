@@ -36,58 +36,8 @@ const SingleProduct = (props) => {
         "updatedAt": "2022-07-12T18:47:53.257Z",
         "__v": 0
     },
-    {
-        "pSold": 0,
-        "pQuantity": 50,
-        "pImages": [
-            "1657651570080_71ttLkQrnfL._AC_SL1500_.jpg",
-            "1657651570551_31D6Ekh9YHL._AC_.jpg"
-        ],
-        "pOffer": "0",
-        "pFeatures": [
-            "usb",
-            "battery"
-        ],
-        "_id": "62cdc173c158490016566497",
-        "pName": "Joyroom JR-T012 Dual Ports Output Portable Power Bank",
-        "pDescription": "Joyroom JR-T012 Dual USB Power Bank - 10000mAh, 2x USB-A\n\nExtend the working time of your rechargeable devices using this Joyroom JR-T012 power bank!\n\nElegant and lightweight, the Joyroom JR-T012 power bank is made of high-quality ABS and plastic. It has four available ports, two for charging devices (2x USB-A) and two for charging power bank (Type-C, Micro USB). Four LED lights inform about remaining power, and a safety chip preserves your devices from overcharging, over-voltage, etc.",
-        "pPrice": 155,
-        "pCategory": {
-            "_id": "62cd8558a314e40016404caf",
-            "cName": "Mobile Phones"
-        },
-        "pStatus": "Active",
-        "pRatingsReviews": [],
-        "createdAt": "2022-07-12T18:46:11.551Z",
-        "updatedAt": "2022-07-12T18:46:11.551Z",
-        "__v": 0
-    },
-    {
-        "pSold": 0,
-        "pQuantity": 20,
-        "pImages": [
-            "1657651497181_51g8sUeO-wL._AC_SL1000_.jpg",
-            "1657651497219_51Z1jkudQGL._AC_SL1000_.jpg"
-        ],
-        "pOffer": "0",
-        "pFeatures": [
-            "battery ",
-            "phone"
-        ],
-        "_id": "62cdc129c158490016566493",
-        "pName": "Xiaomi Redmi Airdots TWS Bluetooth 5.0 Earphone",
-        "pDescription": "Never miss a single beat of your favorite song with the excellent Xiaomi Mi True Wireless Earbuds. Engineered with the advanced Bluetooth 5.0 technology, these earbuds provide a rapid transfer rate. It also modifies the stability of the sound, thereby allowing you to enjoy the sound quality without any interruption. Get relieved from the irritation of tangled wires by using these Xiaomi Mi Earbuds. They offer a perfect fit in your ears so that you can wear them comfortably and enjoy the high-quality sound of timeless music. Thanks to the high-class design of these Xiaomi Earbuds, there is no discrepancy between the sound of the left and right ear. Moreover, the long-lasting battery life of these earbuds makes them your loyal companion for long journeys.",
-        "pPrice": 400,
-        "pCategory": {
-            "_id": "62cd8558a314e40016404caf",
-            "cName": "Mobile Phones"
-        },
-        "pStatus": "Active",
-        "pRatingsReviews": [],
-        "createdAt": "2022-07-12T18:44:57.550Z",
-        "updatedAt": "2022-07-12T18:44:57.550Z",
-        "__v": 0
-    },
+    
+   
     {
         "pSold": 0,
         "pQuantity": 25,
@@ -148,32 +98,7 @@ const SingleProduct = (props) => {
         "updatedAt": "2022-07-12T19:25:01.128Z",
         "__v": 0
     },
-    {
-        "pSold": 0,
-        "pQuantity": 5,
-        "pImages": [
-            "1657651079985_21JwIOBnDnL._AC_.jpg",
-            "1657651079986_31aL0W0ctkL._AC_.jpg"
-        ],
-        "pOffer": "0",
-        "pFeatures": [
-            "ram",
-            "battery "
-        ],
-        "_id": "62cdbf88c158490016566471",
-        "pName": "Nokia 110 (2019) ",
-        "pDescription": "Brand: Nokia Operating System Type: Series 30 Chipset manufacturer: Other Battery Capacity in mAh:Removable Li-Ion 800 mAh battery Display Size (Inch): 1.77INCH Cellular Network Technology: 2G",
-        "pPrice": 579,
-        "pCategory": {
-            "_id": "62cd8558a314e40016404caf",
-            "cName": "Mobile Phones"
-        },
-        "pStatus": "Active",
-        "pRatingsReviews": [],
-        "createdAt": "2022-07-12T18:38:00.266Z",
-        "updatedAt": "2022-07-12T18:38:00.266Z",
-        "__v": 0
-    },
+    
     {
         "pSold": 0,
         "pQuantity": 5,

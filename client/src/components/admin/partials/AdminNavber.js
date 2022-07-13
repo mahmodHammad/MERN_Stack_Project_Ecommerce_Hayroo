@@ -29,7 +29,7 @@ const AdminNavber = (props) => {
             onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.70rem" }}
             className="flex items-left text-center font-bold uppercase text-white-800 text-xl cursor-pointer px-2 text-center cursor-pointer"
-          >stop&shop
+          >stop<span style={{color:"#04aa6d"}}>&</span>shop
           </span>
         </div>
         {/* Small Screen Show */}
@@ -39,8 +39,8 @@ const AdminNavber = (props) => {
             onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.10rem" }}
             className="flex items-left text-center font-bold uppercase text-white-800 text-lg cursor-pointer px-2 text-center cursor-pointer"
-          > c
-            stop&shop
+          > 
+            stop<span style={{color:"#04aa6d"}}>&</span>shop
           </span>
         </div>
         {/* Both Screen show */}
