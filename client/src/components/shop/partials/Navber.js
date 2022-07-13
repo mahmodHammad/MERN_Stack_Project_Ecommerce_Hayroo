@@ -73,17 +73,17 @@ const Navber = (props) => {
             <span
               onClick={(e) => history.push("/")}
               style={{ letterSpacing: "0.10rem" }}
-              className="flex items-left text-center font-bold uppercase text-white-800 sm-text-2xl px-2 text-center "
+              className="flex items-left text-center font-bold uppercase text-white-800 sm-text-2xl px-2 text-center cursor-pointer"
             >
-              stop&shop
+              stop<span style={{color:"#04aa6d"}}>&</span>shop
             </span>
           </div>
           <div
             onClick={(e) => history.push("/")}
             style={{ letterSpacing: "0.70rem" }}
-            className="hidden lg:block flex items-left col-span-1 text-center text-white-800 font-bold tracking-widest uppercase text-xl "
+            className="hidden lg:block flex items-left col-span-1 text-center text-white-800 font-bold tracking-widest uppercase text-xl cursor-pointer"
           >
-            stop&shop
+            stop<span style={{color:"#04aa6d"}}>&</span>shop
           </div>
           <div className="flex items-right col-span-2 lg:col-span-1 flex justify-end">
             {/*  WishList Page Button */}

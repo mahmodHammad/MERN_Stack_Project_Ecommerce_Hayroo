@@ -138,7 +138,7 @@ const ProductDetailsSection = (props) => {
               />
             </div>
              
-              <div className="absolute inset-0 flex justify-between items-center mb-4">
+              <div className="absolute inset-0 flex justify-between items-center mb-4" >
                 <svg
                   onClick={(e) =>
                     slideImage("increase", null, count, setCount, pImages)
