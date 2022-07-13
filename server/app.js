@@ -23,7 +23,6 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const {spawn} = require("child_process")
 const bodyParser = require('body-parser');
 const {downloadImage} = require('./s3')
 
@@ -38,6 +37,7 @@ const orderRouter = require("./routes/orders");
 const usersRouter = require("./routes/users");
 const customizeRouter = require("./routes/customize");
 const promoRouter = require("./routes/promo");
+const recRouter = require("./routes/recommendation");
 // Import Auth middleware for check user login or not~
 const { loginCheck } = require("./middleware/auth");
 const CreateAllFolder = require("./config/uploadFolderCreateScript");
@@ -82,6 +82,8 @@ app.use("/api", brainTreeRouter);
 app.use("/api/order", orderRouter);
 app.use("/api/customize", customizeRouter);
 app.use("/api/promo", promoRouter);
+app.use("/api/recommendation", recRouter);
+
 
 app.get("/images/:key", (req,res)=>{
   const key = req.params.key
@@ -91,8 +93,8 @@ app.get("/images/:key", (req,res)=>{
 })
 
 app.post("/python",(req,res)=>{
+
    var dataToSend;
-   var name="Mohamed"
    const python = spawn ('python3',['./script.py', name]);
 
    python.stdout.on("data", function(data){
