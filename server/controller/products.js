@@ -50,9 +50,9 @@ class Product {
     let images = req.files;
     let allImages = []
     let result1 = await uploadImage(images[0]);
-    allImages.push(result1.key)
+    allImages.push(`https://grad-project-gp35.herokuapp.com/images/${result1.key}`)
     let result2 = await uploadImage(images[1]);
-    allImages.push(result2.key)
+    allImages.push(`https://grad-project-gp35.herokuapp.com/images/${result2.key}`)
     if(pFeatures.length!=0){pFeatures=JSON.parse(pFeatures)}
 
 
@@ -118,9 +118,9 @@ class Product {
     let editImages = req.files;
     let allEditImages = []
     let result1 = await uploadImage(editImages[0]);
-    allEditImages.push(result1.key)
+    allEditImages.push(`https://grad-project-gp35.herokuapp.com/images/${result1.key}`)
     let result2 = await uploadImage(edtiImages[1]);
-    allEditImages.push(result2.key)
+    allEditImages.push(`https://grad-project-gp35.herokuapp.com/images/${result2.key}`)
 
     // Validate other fileds
     if (

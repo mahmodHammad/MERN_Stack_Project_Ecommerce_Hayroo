@@ -63,7 +63,7 @@ const AllProduct = ({ products }) => {
                    style={{height:"25vh",objectFit:"contain"}}
                     onClick={(e) => history.push(`/products/${item._id}`)}
                     className="w-full object-center cursor-pointer"
-                    src={`${apiURL}images/${item.pImages[0]}`}
+                    src={item.pImages[0]}
                     alt=""
                     />
                   </div>

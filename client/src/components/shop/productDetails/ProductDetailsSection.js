@@ -113,7 +113,7 @@ const ProductDetailsSection = (props) => {
               className={`${
                 count === 0 ? "" : "opacity-25"
               } cursor-pointer w-20 h-20 object-cover object-center`}
-              src={`${apiURL}images/${sProduct.pImages[0]}`}
+              src={sProduct.pImages[0]}
               alt="pic"
             />
             <img
@@ -123,7 +123,7 @@ const ProductDetailsSection = (props) => {
               className={`${
                 count === 1 ? "" : "opacity-25"
               } cursor-pointer w-20 h-20 object-cover object-center`}
-              src={`${apiURL}images/${sProduct.pImages[1]}`}
+              src={sProduct.pImages[1]}
               alt="pic"
             />
           </div>
@@ -132,7 +132,7 @@ const ProductDetailsSection = (props) => {
             <div style={{height:"25vw" }}>
                  <img
                 className="w-full"
-                src={`${apiURL}images/${sProduct.pImages[count]}`}
+                src={sProduct.pImages[count]}
                 style={{width:"100%",height:"100%",objectFit: "contain"}}
                 alt="Pic"
               />

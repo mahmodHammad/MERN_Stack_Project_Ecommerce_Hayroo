@@ -68,7 +68,7 @@ const SingleProduct = (props) => {
                   onClick={(e) => history.push(`/products/${item._id}`)}
                   className="w-full object-cover object-center cursor-pointer"
                   style={{width:"100%",height:"100%",objectFit: "contain"}}
-                  src={`${apiURL}images/${item.pImages[0]}`}
+                  src={item.pImages[0]}
                   alt=""
                 />
                 </div>
