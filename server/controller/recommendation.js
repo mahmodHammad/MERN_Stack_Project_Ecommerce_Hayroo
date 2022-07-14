@@ -1,6 +1,8 @@
 const userModel = require("../models/users");
 const productModel = require("../models/products");
 const {spawn} = require("child_process")
+const {Parser} = require('json2csv')
+const fs = require('fs')
 
 
 
@@ -49,6 +51,16 @@ class Recommendation {
             .sort({ _id: -1 });
 
         if (users && products) {
+          // let prod=[]
+          // for (let i = 0; i < users.length; i++) {
+          //   for (let j = 0; j < users[i].history.length; j++) {
+          //     prod.push({
+          //       uId:users[i]._id,
+          //       pId: users[i].history[j]
+          //     })
+              
+          //   }
+          // }
           users.forEach(user => {
             user.history.forEach(histProduct => {
                 finalProducts.push(histProduct)
@@ -57,11 +69,21 @@ class Recommendation {
             });
           });
 
-            const headers = ['User ID', 'Product ID']
+            const headers = ['uId', 'pId']
             const columns = [finalUsers, finalProducts, finalDescription]
 
-            const csvFile = csvConstructor(headers, columns)
-            
+            let csvFile = csvConstructor(headers, columns)
+            // csvFile = csvFile.split('\n');
+            // csvFile.splice(0,1);
+            // csvFile=csvFile.join('\n');
+            // console.log(csvFile)
+            // fs.appendFile('/Users/mohamedraafat/Desktop/Project/MERN_Stack_Project_Ecommerce_Hayroo/server/products.csv', csvFile, err => {
+            //   if (err) {
+            //     console.error(err)
+            //     return
+            //   }
+            //   //file written successfully
+            // })
             var dataToSend;
             const python = spawn ('python3',['./script.py', csvFile, "62cdecfee2a58a0f313e8da1"]);
 
