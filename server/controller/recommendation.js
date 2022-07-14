@@ -73,6 +73,7 @@ class Recommendation {
             const columns = [finalUsers, finalProducts, finalDescription]
 
             let csvFile = csvConstructor(headers, columns)
+            // uncomment to write to csv file, but the file headers need to be written manually in the file
             // csvFile = csvFile.split('\n');
             // csvFile.splice(0,1);
             // csvFile=csvFile.join('\n');
