@@ -11,4 +11,10 @@ router.post("/delete-user", usersController.getDeleteUser);
 
 router.post("/change-password", usersController.changePassword);
 
+router.post("/get-wish-product", usersController.getWishProduct);
+router.post("/add-wish-product", usersController.addWishProduct);
+router.post("/delete-wish-product", usersController.deleteWishProduct);
+
+
+
 module.exports = router;

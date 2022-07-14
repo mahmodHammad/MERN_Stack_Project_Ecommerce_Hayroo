@@ -1,4 +1,5 @@
 const userModel = require("../models/users");
+const productModel = require("../models/products");
 const bcrypt = require("bcryptjs");
 
 class User {
@@ -128,6 +129,73 @@ class User {
       }
     }
   }
+
+  async getWishProduct(req, res) {
+    let { uId } = req.body;
+    if (!uId) {
+      return res.json({ error: "All filled must be required" });
+    } else {
+      try {
+        let User = await userModel
+          .findById(uId)
+          .select("wishList");
+        if (User) {
+          let wishList= await productModel.find({_id:{
+            $in:User.wishList
+          }})
+          console.log(wishList)
+          if (wishList.length>0){
+            res.json(wishList)
+          } else{
+            res.send("No products in wishlist")
+          }
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+
+  }
+
+    async addWishProduct(req, res) {
+    let { pId, uId } = req.body;
+    
+      let currentUser = await userModel.findById(uId) 
+      
+            if(currentUser){
+              let oldWish=currentUser.wishList
+              oldWish.push(pId)
+              let updatedUser =  await userModel.findByIdAndUpdate(uId, {wishList: oldWish});
+
+              if(updatedUser){
+                res.send("Wish product added successfully")
+              }
+            }
+  }
+
+   async deleteWishProduct(req, res) {
+    let { pId, uId } = req.body;
+    
+      let currentUser = await userModel.findById(uId) 
+      
+            if(currentUser){
+              let oldWish=currentUser.wishList
+              oldWish=oldWish.filter(item => {
+                return item != pId
+              })
+              let updatedUser =  await userModel.findByIdAndUpdate(uId, {wishList: oldWish});
+
+              if(updatedUser){
+                res.send("Wish product deleted successfully")
+              }
+            }
+          
+    
+
+
+  }
+
 }
 
 const ordersController = new User();

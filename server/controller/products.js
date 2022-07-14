@@ -245,23 +245,7 @@ class Product {
     }
   }
 
-  async getWishProduct(req, res) {
-    let { productArray } = req.body;
-    if (!productArray) {
-      return res.json({ error: "All filled must be required" });
-    } else {
-      try {
-        let wishProducts = await productModel.find({
-          _id: { $in: productArray },
-        });
-        if (wishProducts) {
-          return res.json({ Products: wishProducts });
-        }
-      } catch (err) {
-        return res.json({ error: "Filter product wrong" });
-      }
-    }
-  }
+  
 
   async getCartProduct(req, res) {
     let { productArray } = req.body;

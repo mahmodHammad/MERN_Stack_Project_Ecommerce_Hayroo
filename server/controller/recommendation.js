@@ -51,23 +51,19 @@ class Recommendation {
         if (users && products) {
           users.forEach(user => {
             user.history.forEach(histProduct => {
-
-                let reqProduct= products.find((product) => product._id==histProduct);
-
-                finalDescription.push(reqProduct.pDescription)
                 finalProducts.push(histProduct)
                 finalUsers.push(String(user._id))
 
             });
           });
 
-            const headers = ['User ID', 'Product ID', 'Product Description']
+            const headers = ['User ID', 'Product ID']
             const columns = [finalUsers, finalProducts, finalDescription]
 
             const csvFile = csvConstructor(headers, columns)
             
             var dataToSend;
-            const python = spawn ('python3',['./script.py', csvFile]);
+            const python = spawn ('python3',['./script.py', csvFile, "62cdecfee2a58a0f313e8da1"]);
 
             python.stdout.on("data", function(data){
                 dataToSend = data.toString();
