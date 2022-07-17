@@ -92,26 +92,6 @@ app.get("/images/:key", (req,res)=>{
   readStream.pipe(res)
 })
 
-app.post("/python",(req,res)=>{
-
-   var dataToSend;
-   const python = spawn ('python3',['./script.py', name]);
-
-   python.stdout.on("data", function(data){
-    dataToSend = data.toString();
-   })
-
-   python.stderr.on('data',data=>{
-    console.log(`stdder: ${data}`);
-   })
-
-   python.on('exit', code=>{
-    console.log(dataToSend)
-   })
-
-   console.log(dataToSend)
-
-})
 
 // Run Server
 const PORT = process.env.PORT || 8000;

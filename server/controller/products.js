@@ -119,7 +119,7 @@ class Product {
     let allEditImages = []
     let result1 = await uploadImage(editImages[0]);
     allEditImages.push(`https://grad-project-gp35.herokuapp.com/images/${result1.key}`)
-    let result2 = await uploadImage(edtiImages[1]);
+    let result2 = await uploadImage(editImages[1]);
     allEditImages.push(`https://grad-project-gp35.herokuapp.com/images/${result2.key}`)
 
     // Validate other fileds
@@ -245,23 +245,7 @@ class Product {
     }
   }
 
-  async getWishProduct(req, res) {
-    let { productArray } = req.body;
-    if (!productArray) {
-      return res.json({ error: "All filled must be required" });
-    } else {
-      try {
-        let wishProducts = await productModel.find({
-          _id: { $in: productArray },
-        });
-        if (wishProducts) {
-          return res.json({ Products: wishProducts });
-        }
-      } catch (err) {
-        return res.json({ error: "Filter product wrong" });
-      }
-    }
-  }
+  
 
   async getCartProduct(req, res) {
     let { productArray } = req.body;
