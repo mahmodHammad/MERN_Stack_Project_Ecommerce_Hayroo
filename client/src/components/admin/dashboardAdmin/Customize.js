@@ -66,6 +66,7 @@ const Customize = () => {
                   />
                 </svg>
                 Add promoCodes
+                <div></div>
               </div>
              ):""}
                
@@ -86,42 +87,35 @@ const Addpromo = () => {
     <Fragment>
       <div className="relative m-4 bg-white p-4 shadow-lg">
         <h1 className="border-b-2 border-green-700 mb-4 pb-2 text-2xl font-semibold">
-          Create new PromoCode
+          Create new Promo Code
         </h1>
-        <div className="relative flex align-items-center space-y-2"
+        
+        
+        <div className="relative flex align-items-center space-y-2 px-2 mx-2"
         >
-          {/* ALI */}
-          {/* <form className="w-full" onSubmit={(e) => submitForm(e)}>
-            <div className="flex space-x-1 py-4">
-              <div className="w-1/2 flex flex-col space-y-1 space-x-1">
-                <label htmlFor="name">Product Name *</label>
-                <input
-                  value={editformData.pName}
-                  onChange={(e) =>
-                    setEditformdata({
-                      ...editformData,
-                      error: false,
-                      success: false,
-                      pName: e.target.value,
-                    })
-                  }
-                  className="px-4 py-2 border focus:outline-none"
-                  type="text"
-                />
-              </div>
-            </div>
-           
-            <div className="flex flex-col space-y-1 w-full pb-4 md:pb-6 mt-4">
-              <button
-                style={{ background: "#04aa6d" }}
-                type="submit"
-                className="rounded-full bg-gray-800 text-gray-100 text-lg font-medium py-2"
-              >
-                Create PromoCode
-              </button>
-            </div>
-          </form> */}
-          
+          <input className="form-control form-control-lg" type="text" placeholder="Promocode name"></input>
+          <input className="form-control" type="text" placeholder="Precentage%"></input>
+          <input className="form-control form-control-sm" type="text" placeholder="Expiration date"></input>
+          <div onClick={(e) => dispatch({ type: "promocode", payload: !data.promocode })}
+            style={{ background: "#04aa6d" }}
+            className="relative mx-4 z-0 px-4 py-2 rounded text-white flex justify-center space-x-2 md:w-4/12 cursor-pointer"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+              />
+            </svg>{" "}
+            <span>Add promo code</span>
+          </div>
         </div>
         {/* CLOSE ICON --start*/} 
         <span
