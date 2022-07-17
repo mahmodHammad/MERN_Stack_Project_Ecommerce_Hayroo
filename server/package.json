@@ -23,6 +23,7 @@
   "homepage": "https://github.com/hasan-py/MERN_Stack_Project_Hayroo_Ecommerce#readme",
   "dependencies": {
     "aws-sdk": "^2.1171.0",
+    "axios": "^0.27.2",
     "bcryptjs": "^2.4.3",
     "braintree": "^3.0.0",
     "child_process": "^1.0.2",

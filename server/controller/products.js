@@ -119,7 +119,7 @@ class Product {
     let allEditImages = []
     let result1 = await uploadImage(editImages[0]);
     allEditImages.push(`https://grad-project-gp35.herokuapp.com/images/${result1.key}`)
-    let result2 = await uploadImage(edtiImages[1]);
+    let result2 = await uploadImage(editImages[1]);
     allEditImages.push(`https://grad-project-gp35.herokuapp.com/images/${result2.key}`)
 
     // Validate other fileds
